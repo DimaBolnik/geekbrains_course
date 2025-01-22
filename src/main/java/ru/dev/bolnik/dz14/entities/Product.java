@@ -1,8 +1,21 @@
 package ru.dev.bolnik.dz14.entities;
 
+
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "products")
 public class Product {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column
     private Long id;
+
+    @Column
     private String title;
+
+    @Column
     private int price;
 
     public Long getId() {

@@ -19,7 +19,7 @@ public class ProductsService {
     }
 
     public Product getById(Long id) {
-        return productRepository.findById(id);
+        return productRepository.findById(id).get();
     }
 
     public List<Product> getAllProducts() {
@@ -31,11 +31,11 @@ public class ProductsService {
     }
 
     public void delete(Long id) {
-        productRepository.delete(id);
+        productRepository.deleteById(id);
     }
 
     public void update(Product product) {
-        productRepository.update(product);
+        productRepository.save(product);
     }
 
     public List<Product> findByTitleContaining(String titleFilter) {
