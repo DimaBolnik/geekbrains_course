@@ -19,7 +19,7 @@ public class ProductsService {
     }
 
     public Product getById(Long id) {
-        return productRepository.findById(id).get();
+        return productRepository.findById(id);
     }
 
     public List<Product> getAllProducts() {
@@ -31,7 +31,7 @@ public class ProductsService {
     }
 
     public void delete(Long id) {
-        productRepository.deleteById(id);
+        productRepository.deleteById(Math.toIntExact(id));
     }
 
     public void update(Product product) {
